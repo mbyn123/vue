@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="vue.js"></script>
+</head>
+<body>
+<div id="head"> 
+ <hd-news></hd-news>
+ <hd-news></hd-news>
+ <hd-news></hd-news>
+ <hd-news></hd-news>
+</div>         
+
+<script type="text/x-template" id="hdNews">
+<div>
+  <li v-for="(v,k) in news">
+    {{v.title}}
+ <button @click="del(k)">删除</button>
+  </li>
+</div>
+</script>
+
+</body>          
+<script>
+//子组件 声明变量
+var hdNews={
+  template:"#hdNews",
+  data(){
+    return{
+      news:[
+        {title:'方式二'},
+        {title:'hpphp'},
+        {title:'baidu'}
+      ]
+    }
+  },
+  methods:{
+    del(k){
+      this.news.splice(k ,1)
+    }
+  }
+};
+
+new Vue({ 
+  el:'#head',
+  components:{hdNews},
+  data:{}
+})
+  
+</script>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="vue.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css">
+</head>
+<body>
+<!--父級-->
+<div id="head"> 
+<div :is="formType"></div><!--使用:is调用数据-->
+<input type="radio" v-model="formType" value="hdInput">文本框
+<input type="radio" v-model="formType" value="hdTextarea">文本域
+</div>                    <!--设置按钮切换两组子组件-->
+</body>          
+<script>
+
+var hdInput={ //定义子组件,定义子组件模板
+  template:"<div><input></div>"
+};
+var hdTextarea={ //定义子组件,定义子组件模板
+  template:"<div><textarea></textarea></div>"
+};
+
+
+new Vue({ 
+  el:'#head',
+  components:{hdInput,hdTextarea},
+   data:{//数据
+     formType:'hdInput'//默认值为文本框
+  },
+})
+  
+</script>
+</html>

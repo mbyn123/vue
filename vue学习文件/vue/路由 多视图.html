@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="vue.js"></script>
+    <script src="vue-router.js"></script>
+</head>
+<body>
+<div id="head"> 
+  <div class="links">
+    <router-link to="/">首页</router-link>
+    <router-link to="/news">新闻</router-link>
+    <router-link to="/user">用户</router-link>
+  </div>
+  <!--1.路由容量-->
+   <router-view name="header"></router-view>
+   <router-view></router-view><!--默认视图-->
+   <router-view name="footer"></router-view>
+</div>    
+</body>          
+<script>
+//组件
+const headCap={
+  template:"<div>头部</div>"
+};
+const footCap={
+  template:"<div>底部</div>"
+};
+const footCap2={
+  template:"<div>底部2</div>"
+};
+const footCap3={
+  template:"<div>底部3</div>"
+}
+
+const newCap={
+  template:'<div>新闻</div>'
+};
+
+const userCap={
+  template:'<div>用户</div>'
+};
+const indexCap={
+  template:'<div>首页</div>'
+}
+
+
+//2.路由表
+let router = new VueRouter({
+     routes:[
+        {
+          path:'/',
+          name:"index",
+          components:{
+            default:indexCap,//默认视图--组件
+            header:headCap,
+            footer:footCap,
+          }
+        },
+        {
+          path:'/news',
+          name:"news",
+          components:{
+            default:newCap,//默认视图--组件
+            header:headCap,
+            footer:footCap2,
+          }
+        },
+        {
+          path:'/user',
+          name:"user",
+          components:{
+            default:userCap,//默认视图--组件
+            header:headCap,
+            footer:footCap3,
+          }
+        },
+     ]
+})
+
+var app = new Vue({ 
+  el:'#head',
+  data:{},
+ 
+
+  //3.添加到vue
+  router
+})
+</script>
+</html>

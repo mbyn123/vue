@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="vue.js"></script>
+</head>
+<body>
+    <div id="head">
+     <h1>{{hd}}</h1>
+
+     <h3 v-once>{{hd}}</h3><!--不需要数据同步更新，使用v-once-->
+
+     <input type="text" v-model="hd"><!--数据同步更新，data与input绑定在一起-->
+    </div>             <!-- v-model:数据双向绑定，通常与输出组件放在一起 v-model就是data-->
+    <script>
+    var app = new Vue({
+        el:'#head',
+        data:{
+           hd:"hello world"
+        }
+    })
+    </script>
+</body>
+</html>

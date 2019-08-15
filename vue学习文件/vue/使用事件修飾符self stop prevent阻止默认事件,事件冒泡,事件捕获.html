@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="vue.js"></script>
+</head>
+<body>
+<div id="head"> <!--父级使用 @click.slef="box",只触发自身事件的时候,弹出消息-->
+<div @click.capture="box" :style="{background: 'red'}"><!--父级使用capture,形成事件捕获,先执行父级事件,再执行子级事件-->
+  <a href="http://www.baidu.com" @click.prevent.stop="link">百度</a>
+</div>            <!--使用prevent阻止a标签自身默认事件,不跳转网站,只弹出消息,同时也会触发事件冒泡,触发父级点击事件,弹出消息-->
+</div>            <!--只使用stop可以阻止事件冒泡,只响应a标签自身的事件,跳转网站,弹出消息-->
+</body>           <!--同时使用,可以阻止事件冒泡的发生,也可以阻止默认事件,只触发a标签点击弹出消息事件-->
+<script>
+var app=new Vue({
+  el:'#head',
+  data:{
+    
+  },
+  methods:{
+    box(){
+      alert('父級')
+    },
+    link(){
+      alert('子級')
+    }
+  }
+})
+</script>
+</html>

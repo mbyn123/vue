@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="vue.js"></script>
+    <script src="vue-myplugin.js"></script>
+</head>
+<body>
+<div id="test">
+<p v-my-directive="msg"></p><!--调用插件中的自定义指令-->
+</div>
+
+<script>    
+    //声明使用插件   
+    Vue.use(MyPlugin)// 此时会执行Myplugin.install(Vue)
+    //调用插件中的全局方法
+    Vue.myGlobalMethod()
+    
+ const vm=new Vue({
+     el:"#test",
+     data:{
+         msg:'aaaaaabbbbbccccddfff'
+     }
+    })
+    //调用插件中的实例对象方法
+    vm.$myMethod()
+</script> 
+</body>
+</html>

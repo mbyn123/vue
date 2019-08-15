@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <input type="button" value="a">
+    <input type="button" value="b">
+    <input type="button" value="c">
+    <input type="button" value="d">
+<script>
+     var btn=document.getElementsByTagName("input");
+     for(let i=0;i<btn.length;i++){//使用let声明变量 可以依此弹出索引0，1，2，3 使用var声明只能弹出4
+          btn[i].onclick=function(){
+             alert(i)
+         }
+     }//仅在for块级作用域内生效
+     console.log(i)//i 无效
+
+</script>
+</body>
+</html>

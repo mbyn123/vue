@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="vue.js"></script>
+    <script src="vue-router.js"></script>
+    <style >
+   .nav{
+      color:#ccc;
+    }
+    .links .router-link-active{
+      color:black;
+    }
+    </style>
+</head>
+<body>
+<div id="head"> 
+  <div class="links">
+ <!--放链接点 router-link等于a标签-->
+
+ <!--<router-link class="nav" :to="{name:'news'}">页面1</router-link> 使用name跳转 命名路由-->                      
+ <!--<router-link  class="nav" to="/news/58">页面1</router-link> 传递参数-->
+ <router-link  class="nav" :to="{name:'news1',params:{id:98}}">页面1</router-link><!--传递参数 命名路由-->
+ <router-link  class="nav" to="/user/张三">页面2</router-link><!--使用path跳转-->
+ <router-link  class="nav" to="/c">页面3</router-link>
+  </div>
+ 
+
+  <!--1.路由容量-->
+   <router-view></router-view>
+
+</div>    
+</body>          
+<script>
+
+//2.路由表
+let router = new VueRouter({
+     routes:[ 
+       {
+        path:'/news/:id/',
+        name:'news1',
+        component:{template:'<div>新闻:{{$route.params.id}}</div>'}//传递参数
+       },                             //route表示当前路由所包含的信息 params表示参数
+       {
+        path:'/user/:v',//使用path传递参数加:
+        component:{template:'<div>姓名:{{$route.params.v}}</div>'}
+       },
+       {
+        path:'/user/bbb',
+        component:{template:'<div>b2</div>'}
+       },
+       {
+        path:'/c',
+        name:'index',
+        component:{template:'<div>cccccc</div>'}
+       },
+     ]
+})
+
+var app = new Vue({ 
+  el:'#head',
+  data:{
+  
+  },
+  //3.添加到vue
+  router
+})
+</script>
+</html>

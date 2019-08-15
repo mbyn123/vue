@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="vue.js"></script>
+    <script src="vue-router.js"></script>
+    <style > 
+    </style>
+</head>
+<body>
+<div id="head"> 
+  <div class="links">
+<input type="button" value="页面1" @click="fun1()">
+<input type="button" value="页面2"  @click="fun2()">
+<input type="button" value="页面3"  @click="fun3()">
+<input type="button" value="页面4"  @click="fun4()">
+  </div>
+  <!--1.路由容量-->
+   <router-view></router-view>
+</div>    
+</body>          
+<script>
+
+//2.路由表
+let router = new VueRouter({
+     routes:[
+       {
+        path:'/news/:id/',
+        name:'news',
+        component:{template:'<div>新闻:{{$route.params.id}}</div>'}
+       },                          
+       
+       {
+        path:'/user/:bbb',
+        component:{template:'<div>姓名:{{$route.params.bbb}}</div>'}
+       },
+       {
+        path:'/c/:ccc',
+        name:'index',
+        component:{template:'<div>索引:{{$route.params.ccc}}</div>'}
+       },
+       {
+        path:'/d',
+        component:{template:'<div>ddddd</div>'}
+       },
+     ]
+})
+
+var app = new Vue({ 
+  el:'#head', 
+  data:{},
+  methods:{
+    fun1(){
+      this.$router.push('/news/100');//$router:操作路由
+    },         //push入栈
+    fun2(){
+      this.$router.push('/user/张三');
+    },
+    fun3(){
+      this.$router.push({name:"index",params:{ccc:4-9}});
+    },
+    fun4(){
+      this.$router.replace('/d');
+    }          //replace 替换掉最后一个历史纪录（当前）
+  },  
+  watch:{//监听路由 使用watch监听只能看，不能操作 可以使用导航守卫
+    $route(value,old_value){
+      console.log(value,old_value)
+    }
+  },
+  //3.添加到vue
+  router
+})
+</script>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="vue.js"></script>
+</head>
+<body>
+<div id="head">
+ <li v-for="v in comments">         <!--k为索引-->
+   {{v.id}}.{{v.content}} <button v-on:click="remove('k')">删除</button>
+ </li>             <!--v-model等于文本域的值-->
+ <textarea  v-model="current_content" cols="30" rows="10"></textarea><br>
+ <button v-on:click='push("end")'>发表到后面</button>
+ <button v-on:click='push("pre")'>发表到前面</button><br>
+                   <!--使用参数(' ')-->
+<button v-on:click="del('end')">删除最后一条</button>     
+<button v-on:click="del('pre')">删除第一条</button><br>
+<button v-on:click="sort">排序</button> 
+<button v-on:click="reverse">反序</button><br>       
+<input type="text" v-on:keyup.enter="search" v-model="search_content">搜索
+</div>  <!--v-on:绑定事件的内容要放在methods方法内容中--><!--使用v-model定义的值要放在data数据内容中-->
+</body>
+<script>
+var app=new Vue({
+  el:'#head',
+  data:{
+    //搜索内容
+   search_content:" ",
+   //输入内容
+   current_content:" ",
+   comments:[
+     {id:5,content:"百度"},
+     {id:4,content:'hello'},
+     {id:6,content:"百度"},
+     {id:3,content:'hello'},
+     {id:1,content:"百度"},
+     {id:2,content:'hello'}
+   ]
+  },
+  methods:{
+    search(){
+         this.comments=this.comments.filter((item)=>{
+          console.log(item)
+           var reg=new RegExp(this.search_content,'i')
+           return reg.test(item.content)
+         })
+      
+    },
+    reverse(){//颠倒数组顺序
+      this.comments.reverse();
+    },
+    sort(){//比较数组排序，添加比较函数
+     this.comments.sort(function(n1,n2){
+      return  n1.id-n2.id
+      
+     })
+    },
+    remove(k){
+      this.comments.splice(k,1)//k索引为splice中的删除位置
+    },
+    push(type){//添加type操作类型
+      var id=this.comments.length+1
+      var content={id,content:this.current_content}
+    
+      switch(type){
+        case 'end':
+        this.comments.push(content);
+        break;
+        case 'pre':
+        this.comments.unshift(content);
+        break;
+      }
+      this.current_content=" "
+    },
+    del(type){
+       switch(type){
+        case 'end':
+        this.comments.shift();
+        break;
+
+        case 'pre':
+        this.comments.pop();
+        break;  
+       }
+    }
+   
+  }
+   
+})
+</script>
+</html>

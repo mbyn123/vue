@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="vue.js"></script>
+</head>
+<body>
+<div id="head"> 
+<input type="text" @keyup.right.left.down.up.enter.esc="keyEvent">
+<input type="text" @keyup.ctrl.a="keyEvent">
+</div>            <!--指定键盘按键ctrl+a组合键触发事件-->
+</body>          
+<script>
+var app=new Vue({
+  el:'#head',
+  data:{
+    
+  },
+  methods:{
+    keyEvent(){
+    console.log("键盘事件")
+   }
+  }
+})
+</script>
+</html>

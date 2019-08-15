@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="vue.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css">
+</head>
+<body>
+<!--父級-->
+<div id="head"> 
+<hd-news :s="news">
+<template slot-scope="v"><!--使用solt-scope接收变量v,放在模版标签template中-->
+  <li>                  <!--可以使内容被用户自定义编辑修改样式-->
+    {{v.field.title}}
+  </li>
+</template>
+</hd-news>
+</div>    
+
+<!--子級模版-->
+<script type="text/x-template" id="hdNews">
+  <ul >
+<!--  <li  v-for="v in s">{{v.title}}</li>  -->
+      <slot v-for="v in s" :field="v"></slot><!--將变量v传递给父级作用域-->
+    </ul>
+</script>
+
+</body>          
+<script>
+//子组件 
+var hdNews={
+  template:"#hdNews",
+  //设置参数
+  props:["s"],
+};
+//根组件
+new Vue({ 
+  el:'#head',
+  components:{hdNews},
+   data:{//数据
+   news:[
+     {title:'inphone'},
+     {title:'平板電腦'}
+   ]
+  },
+})
+  
+</script>
+</html>

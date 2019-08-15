@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="vue.js"></script>
+</head>
+<body>
+    <div id="head">
+     {{hd}}
+     <h1 v-text="hd"></h1><!--使用v-text也可以输出文本内容,更新元素的textcontent-->
+     <h1 v-html="hd"></h1><!--使用v-html输出转义HTML标签的内容,更新元素的innerHTML-->
+    </div>
+    <script>
+    var app = new Vue({
+        el:'#head',
+        data:{
+           hd:"<h1 style='color:red'>baidu.com</h1>"
+        }
+    })
+    </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="vue.js"></script>
+</head>
+<body>
+<div id="head"> 
+
+  <a href="http://www.baidu.com" @click.prevent.once="link">百度</a>
+                              <!---使用once只阻止一次默认行为-->
+</div>            
+</body>          
+<script>
+var app=new Vue({
+  el:'#head',
+  data:{
+    
+  },
+  methods:{
+    link(){
+      alert('子級')
+    }
+  }
+})
+</script>
+</html>

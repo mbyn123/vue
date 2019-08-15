@@ -1,0 +1,24 @@
+{
+  "name": "XDML",
+  "version": "1.0.0",
+  "description": "写代码啦桌面版应用",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "packager": "electron-packager ./ XDML-APP --all --out ./outApp --app-version 1.0.1 --overwrite"  
+  },
+  "repository": "https://github.com/electron/electron-quick-start",
+  "keywords": [
+    "Electron",
+    "quick",
+    "start",
+    "tutorial",
+    "demo"
+  ],
+  "author": "GitHub",
+  "license": "CC0-1.0",
+  "devDependencies": {
+    "electron": "^4.0.4",
+    "electron-packager": "^13.1.0"
+  }
+}

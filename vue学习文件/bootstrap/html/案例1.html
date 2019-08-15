@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.css">
+   
+
+<style>
+
+.reply{margin-top: 0}
+.del{
+  border:1px solid #ccc;
+  float: right;
+}
+.del a{
+  display: block;
+  text-decoration: none;
+}
+.user{font-size: 22px}
+.center{padding: 0 50px}
+</style>
+</head>
+<body >
+<div id="app">
+  <div>
+      <header class="site-header jumbotron">
+          <div class="container">
+            <div class="row">
+                  <div class="col-xs-12">
+                    <h1>请发表对vue的评论</h1>
+                  </div>
+            </div>
+          </div>
+      </header>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+              <form class="form-horizontal">
+                <div class="form-group">
+                  <label for="name">姓名</label>
+                  <input type="text" id="name"class="form-control" placeholder="用户名">
+                </div>
+                <div class="form-group">
+                  <label>评论内容</label>  
+                    <textarea class="form-control" rows="6" placeholder="评论内容"></textarea>
+                </div>
+              <div class="form-group pull-right">
+                <button type="submit" class="btn btn-primary">提交</button>
+              </div>
+              </form>
+        
+            </div>
+             
+            <div class="col-md-8">
+              <h3 class="reply">评论回复:</h3>
+              <ul class="list-group">
+                <li class="list-group-item clearfix">
+                  <div class="del"><a href="#javascript:;">删除</a></div>
+                  <p class="user">
+                   <span>xxx</span> <span>说</span>
+                   
+                  </p>
+                  <p class="center">
+                    vue不错
+                  </p>
+                </li>
+                <li class="list-group-item">
+                    <div class="del"><a href="#javascript:;">删除</a></div>
+                    <p class="user">
+                      <span>xxx</span>
+                      <span>说</span>
+                    </p>
+                    <p class="center">
+                      vue不错
+                    </p>
+                </li>
+              </ul>
+            </div>
+          </div>
+      </div>
+
+  </div>
+
+</div>
+</body>
+</html>

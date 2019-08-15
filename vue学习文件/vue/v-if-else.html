@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="vue.js"></script>
+</head>
+<body>
+<div id="head">
+<input type="text" v-model="age">
+<span v-if="age<20">小孩</span>
+<span v-else-if="age<30">青年</span>
+<span v-else-if="age<50">壮年</span>
+<span v-else="age<80">老年</span>
+<br>    
+<input type="checkbox" v-model="copyright">接受协议<br>
+<span v-if="copyright==false">请先接受协议</span><br><!--if语句的条件成立,显示,不成立,隐藏-->
+<button v-if="copyright==true">注册</button>
+</div>
+<script>
+    var app = new Vue({
+        el:'#head',
+        data:{
+           copyright:false,
+           age:0
+        }, 
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        window.onload=()=>{
+            document.onclick=ev=>{//有且仅有一个参数ev，括号可以省略
+              alert(ev.clientX+','+ev.clientY)
+            }
+//        let sum=(a,b)=>{
+//            return(a+b) 有且仅有一条语句return.{}可以省略
+//        }
+//       alert(sum(12,88))
+
+        let sum=(a,b)=>a+b;
+        alert(sum(12,88))
+    }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,4 @@
+*.zip
+node_modules
+XDML-darwin-x64
+outApp

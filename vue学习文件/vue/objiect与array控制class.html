@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="vue.js"></script>
+</head>
+<style>
+.green{color:green}    
+.color{color:red}
+.font{font-size: 200px}
+</style>
+<body>
+<div id="head">
+ <h1 class="green" :class='{color:false,font:true}'>你好</h1><!--使用对象的形式控制class-->
+ <h1 :class="hd">hello</h1><!--设置变量来控制class--->
+
+ <h1 :class='["color","font"]'>world</h1><!--使用数组的形式控制class-->
+ <h1 :class="[success,font]">cat</h1><!--设置变量来控制class--->
+</div>
+<script>
+    var app = new Vue({
+        el:'#head',
+        data:{
+        hd:{color:true,font:true},
+        success:'color',
+        font:"font"
+        }
+    })
+</script>
+</body>
+</html>

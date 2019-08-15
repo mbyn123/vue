@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="vue.js"></script>
+</head>
+<body>
+
+<div id="head"> 
+  <!--设置参数的属性-->
+ <hd-news hd="abc" cms="123" :show-del-button="true" :lis="news"></hd-news>
+</div>                        <!--控制按钮隐藏-->
+
+<script type="text/x-template" id="hdNews">
+<div>
+  <!--显示参数-->
+  {{hd}}{{cms}}{{showDelButton}}
+  <li v-for="(v,k) in lis">
+    {{v.title}}           
+ <button @click="del(k)" v-show="showDelButton">删除</button>
+  </li>                  <!--给按钮设置-->
+</div>
+</script>
+
+</body>          
+<script>
+//子组件 声明变量
+var hdNews={
+  template:"#hdNews",
+  //使用props定义参数,传参
+  props:['hd','cms','showDelButton','lis'],
+  data(){                       //定义参数lis为父级数据变量
+    return{}
+  },
+  methods:{
+    del(k){
+      this.lis.splice(k ,1)
+    }
+  }
+};
+
+//根组件
+new Vue({ 
+  el:'#head',
+  components:{hdNews},
+  data:{
+    news:[//从父级向子级传递数据
+        {title:'方式二'},
+        {title:'hpphp'},
+        {title:'baidu'},
+        {title:'1234546'}
+      ]
+  }
+})
+  
+</script>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="vue.js"></script>
+</head>
+<body>
+    <div id="test1">
+    <p v-upper-text="msg1"></p>
+    </div>
+
+    <div id="test2">
+    <p v-lower-text="msg2"></p>
+    </div>
+    <script>
+    //定义一个全局属性
+    //el:指令属性所在的标签对象
+    //binding:包含指令相关信息数据的对象
+    Vue.directive('upper-text',function(el,binding){//注册全局指令
+          console.log(el,binding)//value只是binding内包含的一个对象,还有其他的
+    el.textContent=binding.value.toUpperCase()//定义一个转换文本大小写的全局指令
+    })
+    new Vue({
+      el:'#test1',
+      data:{
+          msg1:"aaaaaa",
+      },
+    })
+
+    new Vue({
+    el:"#test2",
+    data:{
+        msg2:"BBBBBBBB"
+    },
+    directives:{//注册局部指令 只在vm(#test2)管理范围内有效 directive后面要加s
+      'lower-text'(el,binding){
+        console.log(el,binding)
+        el.textContent=binding.value.toLowerCase()//定义一个转换文本为小写的局部指令
+            }
+        }
+    })
+
+    </script>
+</body>
+</html>

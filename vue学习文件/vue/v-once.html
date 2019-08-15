@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="vue.js"></script>
+</head>
+<style>
+.hd1{color:red;}
+.hd2{color:green}
+</style>
+<body>
+<div id="head">
+    <h1 v-once>{{n}}</h1><!--不需要数据同步-->
+    {{n+3}}
+    <h1 :class="'hd'+n">你好</h1>
+    <input type="text" v-model="n">
+    <br>
+    <input type="radio" v-model="n" value="1">红
+    <input type="radio" v-model="n" value="2">绿
+</div>
+<script>
+    var app = new Vue({
+        el:'#head',
+        data:{
+          n:1//所有的n都会同时变化
+        }
+    })
+</script>
+</body>
+</html>

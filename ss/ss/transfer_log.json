@@ -1,0 +1,18 @@
+{
+	"homecn2.fyvvv.com" : {
+		"totalUploadBytes" : 8834,
+		"totalDownloadBytes" : 121118
+	},
+	"homecn1.fyvvv.com" : {
+		"totalUploadBytes" : 484,
+		"totalDownloadBytes" : 5808
+	},
+	"cnhk-14.fyvvv.com" : {
+		"totalUploadBytes" : 3014,
+		"totalDownloadBytes" : 15982
+	},
+	"cnjp-96.fyvvv.com" : {
+		"totalUploadBytes" : 116065287,
+		"totalDownloadBytes" : 888709408
+	}
+}

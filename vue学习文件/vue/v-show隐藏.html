@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="vue.js"></script>
+    <style>
+    .e{
+        border:1px solid red;
+        width:100px;
+        height:100px;
+        background: red;
+    }
+    .a{
+        border:1px solid green;
+        width:100px;
+        height:100px;
+        color:green
+    }
+    </style>
+</head>
+<body>
+<div id="head">
+<h1 v-if="status">你好</h1><!--v-if会删除节点-->
+<h2 v-show="status">baidu.com</h2><!--v-show会给节点添加display:none,隐藏起来-->
+<input type="checkbox" v-model="status">
+<input type="button" @click="status=!status">
+
+<div class="a" @click="">标签一</div>
+</div>
+<script>
+    var app = new Vue({
+        el:'#head',
+        data:{
+           status:"true",
+           state:"true"
+        }, 
+    })
+</script>
+</body>
+</html>

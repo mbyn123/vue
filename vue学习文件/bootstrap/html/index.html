@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.css">
+   
+
+<style>
+
+*{margin:0;padding:0}
+.border{
+  width:600px;
+  margin: 0 auto
+}
+.border-in{
+  padding: 10px;
+  border:1px solid #ccc;
+}
+
+
+.main{
+  border-radius:5px;
+  border:1px solid #ccc;  
+}
+ul li{
+    list-style: none;
+    padding-left: 15px;
+    padding-right: 5px;
+    border-bottom: 1px solid #ccc;
+    height:40px;
+    line-height: 40px;
+    font-size:16px;
+  }
+ ul li:last-child{
+   border-bottom: none;
+ }
+
+ul li button{
+  float: right;
+  margin-top: 3px;
+}
+
+.footer{
+  height:40px;
+  line-height: 40px;
+  padding-left:15px; 
+  margin-top: 15px;
+
+}
+
+.footer input{
+  margin-right: 30px;
+}
+.footer button{
+  float:right;
+  margin-top: 3px;
+}
+
+</style>
+</head>
+<body >
+<div id="app">
+  <div class="border">
+    <div class="border-in">
+      <div class="form-group">
+        <input type="text" placeholder="请输入你的任务名称，按回车键确认" class="form-control">
+      </div>
+      <ul class="main clearfix">
+        <li class="">
+          <label>
+            <input type="checkbox" >
+            <span>xxxxx</span>
+          </label>
+          <button class="btn btn-primary" style="display: none">删除</button>
+        </li>
+        <li>
+            <label>
+              <input type="checkbox">
+              <span>yyyyy</span>
+            </label>
+            <button class="btn btn-primary" style="display: none">删除</button>
+          </li>
+      </ul>
+      <div class="footer clearfix">
+        <input type="checkbox">
+        <span>已完成</span><span>0</span><span>/全部</span><span>2</span>
+        <button class="btn btn-primary">清除已完成任务</button>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

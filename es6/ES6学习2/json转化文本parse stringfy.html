@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    let json={a:123,b:'张三',c:'age'}
+    let  myjson=JSON.stringify(json)//转换为标准json写法
+    console.log(myjson)//{"a":123,"b":"张三","c":"age"}
+{
+    let str='{"a":123,"b":"张三","c":"age"}'
+    let obj=JSON.parse(str)//json标准写法转换为js写法
+    console.log(obj)//{a: 123, b: "张三", c: "age"}
+}
+    
+    </script>
+</body>
+</html>

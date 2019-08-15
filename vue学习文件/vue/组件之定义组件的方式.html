@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="vue.js"></script>
+</head>
+<body>
+<div id="head"> 
+ <hd-side></hd-side>
+ <hd-news></hd-news><!--<hd-pop></hd-pop>-->
+</div>         
+</body>          
+<script>
+//子组件 全局 
+Vue.component('hd-side',{
+  template:'<h1>方式一</h1>'
+})
+
+//子组件 声明变量
+var hdNews={
+  template:"<h2>方式二</h2>"
+}
+//根组件
+new Vue({ 
+  el:'#head',
+  //根组件内引用
+  components:{hdNews}// components:{hdpop:hdNews}
+})
+  
+</script>
+</html>

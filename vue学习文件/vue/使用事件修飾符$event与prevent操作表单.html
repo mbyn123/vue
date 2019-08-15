@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="vue.js"></script>
+</head>
+<body>
+<div id="head"> <!--@submit是表单事件-->
+<form action="" @submit.prevent="post('http-equiv')">
+               <!--方法1 @submit="post('http-equiv',$event)"--> 
+  {{a}}              <!--使用prevent阻止默认事件发生，提交的时候会弹出信息，时间不会更新，实现异步操作-->
+  <button>提交</button>
+  <button @click="test(132,$event)">test</button>
+</form>                 <!---$event传递当前的对象的值-->
+</div> 
+</body>
+<script>
+var app=new Vue({
+  el:'#head',
+  data:{
+    a:new Date(),
+    test(aa,event){
+      alert(aa+event.target.innerHTML)
+    }
+  },
+  methods:{
+    //post(s,event){  方法1
+    // event.preventDefault()
+    //alert(s) 
+    //}
+    post(s){
+      alert(s)
+    }
+  }
+})
+</script>
+</html>
