@@ -13,6 +13,7 @@
   </swiper-item>
 </swiper>
 
+<view>{{count}}</view>
 <block wx:key="1" wx:for="{{posts_key}}" wx:for-item="item" wx:for-index="idx">
   <view data-postid="{{item.postId}}" bind:tap="postTap">
     <template  is="postitem" data="{{...item}}" />

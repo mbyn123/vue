@@ -19,6 +19,16 @@
 
 
 
+mpvue 构建项目
+
+vue init mpvue/mpvue-quickstart + 项目名
+
+lishiqi5516@foxmail.com
+
+wx8fa10671450029cb
+
+rfilHYoNEWrbOzTS
+
 一开始只有两个选项: default(默认配置)和Manually select features(手动配置)
 
  ? Check the features needed for your project: (Press <space> to select, <a> to toggle all, <i> to invert selection) 

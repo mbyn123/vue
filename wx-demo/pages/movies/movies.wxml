@@ -4,7 +4,7 @@
 
 <view class="search"> 
 <icon type="search" size="15"/>
-<input type="search" placeholder="头号玩家" bindblur="onSearchMovies" bindfocus="onfcors"/>
+<input type="search" placeholder="头号玩家" bindconfirm="onSearchMovies" bindfocus="onfcors"/>
 <image src="../../images/icon/xx.png" bindtap="oncancel" wx:if="{{issearch}}" ></image>
 </view>
 <view wx:if="{{ismovies}}">

@@ -3,12 +3,16 @@
 var postsData= require('../../data/posts-data.js')
 
 Page({
-
+properties:{
+  count:{
+    type:Number
+  }
+},
   /**
    * 页面的初始数据
    */
   data: {
-
+     
   },
 
   /**
