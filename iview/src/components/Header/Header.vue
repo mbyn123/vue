@@ -2,14 +2,14 @@
   <div>
     <div class="header-bar">
       <div class="Control-Strip">
-        <div>
+        <!-- <div>
           <Icon type="md-search" size="26" />
         </div>
         <div class="prd">
           <Tooltip content="使用文档" placement="bottom">
             <Icon type="md-help-circle" size="20" />
           </Tooltip>
-        </div>
+        </div> -->
         <div class="remind">
           <Poptip placement="bottom-end" width="auto">
             <div>
@@ -46,7 +46,7 @@
             </DropdownMenu>
           </Dropdown>
         </div>
-        <div class="language">
+        <!-- <div class="language">
           <Dropdown>
             <Icon type="ios-globe" size="20" />
             <DropdownMenu slot="list">
@@ -68,7 +68,7 @@
               </DropdownItem>
             </DropdownMenu>
           </Dropdown>
-        </div>
+        </div> -->
       </div>
     </div>
   </div>

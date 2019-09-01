@@ -24,7 +24,7 @@
       <Layout>
         <Header :style="{padding: 0}" class="layout-header-bar" style="background:#fff">
           <Row>
-            <Col :xs="4" :sm="10" :md="10" :lg="16" :xl="16" :xxl="19">
+            <Col :xs="14" :sm="15" :md="16" :lg="19" :xl="20" :xxl="21">
               <Icon
                 @click.native="collapsedSider"
                 :class="rotateIcon"
@@ -33,7 +33,7 @@
                 size="24"
               ></Icon>
             </Col>
-            <Col :xs="20" :sm="14" :md="14" :lg="8" :xl="8" :xxl="5">
+            <Col :xs="10" :sm="9" :md="8" :lg="5" :xl="4" :xxl="3">
               <HeaderIN />
             </Col>
           </Row>
@@ -56,7 +56,7 @@ export default {
   },
   computed: {
     fun(s) {
-      console.log(s);
+      consolenpm.log(s);
     },
     menuitemClasses: function() {
       return ["menu-item", this.isCollapsed ? "collapsed-menu" : ""];

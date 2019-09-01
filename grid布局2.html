@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<!--
+Created using JS Bin
+http://js.jirengu.com
+
+Copyright (c) 2019 by anonymous (http://js.jirengu.com/jucoxefoba/10/edit)
+
+Released under the MIT license: http://jsbin.mit-license.org
+-->
+<meta name="robots" content="noindex">
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>JS Bin</title>
+<style id="jsbin-css">
+body{
+  padding:0;
+  margin:0;
+  background:#ccc;
+  display:grid;
+  grid:50px auto/1fr 500px 200px 1fr;
+  grid-gap:10px;
+}
+
+header{
+  grid-column:1/5;
+  grid-row:1;
+ 
+  display:grid;
+  grid:auto /1fr 710px 1fr;
+}
+
+.wrap{
+  grid-column:2;
+   background:#fff;
+}
+
+main{
+  grid-column:2;
+  grid-row:2;
+
+  height:400px;
+  display:grid;
+  grid:auto auto auto /500px;
+  grid-gap:10px
+}
+
+.item{
+  grid-row:1;
+  background:#fff;
+}
+
+.item2{
+  grid-row:2;
+  background:#fff;
+  
+}
+
+.item3{
+  grid-row:3;
+   background:#fff;
+}
+
+aside{
+  grid-column:3;
+  background:#fff;
+}
+</style>
+</head>
+<body>
+  <header>
+    <div class="wrap">header</div>
+  </header>
+  <main>
+    <div class="item">1</div>
+    <div class="item2">2</div>
+    <div class="item3">3</div>
+  </main>
+  <aside>aside</aside>
+</body>
+</html>
